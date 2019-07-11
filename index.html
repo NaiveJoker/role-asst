@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>角色识别助手</title>
+    <link rel="icon" href="img/角色-01.png" type="image/x-icon" />
+    <!-- Bootstrap4核心CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="css/common.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/index.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  </head>
+  <body>
+    <!-- 导航栏 -->
+    <nav
+      class="navbar navbar-expand fixed-top navbar-light bg-light bd-navbar"
+      id="navbar"
+    >
+      <div class="container d-flex">
+        <div class="navbar-header" id="navbar-header">
+          <a class="navbar-brand">
+            <img
+              src="img/角色-01.png"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+              alt="Logo"
+            />
+            角色识别助手
+          </a>
+        </div>
+        <div class="navbar-nav-scroll">
+          <ul class="navbar-nav d-flex" id="nav-menu">
+            <li class="nav-item">
+              <a href="#" class="nav-link active">主页</a>
+            </li>
+            <li class="nav-item">
+              <a href="intro.html" class="nav-link">介绍</a>
+            </li>
+            <li class="nav-item">
+              <a href="comments.html" class="nav-link">留言</a>
+            </li>
+          </ul>
+        </div>
+        <!-- ml-auto为bootstrap中向左推两个项目 -->
+        <div class="ml-auto d-flex">
+          <ul
+            class="nav navbar-nav user-bar align-items-center justify-content-end"
+          >
+            <li class="nav-item">
+              <div class="dropdown">
+                <button
+                  class="btn dropdown-toggle"
+                  type="button"
+                  id="dropdownMenuButton"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  王兰花
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <a class="dropdown-item" href="#">登出</a>
+                </div>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a href="signup.html" class="nav-link">注册</a>
+            </li>
+            <li class="nav-item">
+              <a href="login.html" class="nav-link">登录</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- 主页面 -->
+    <div class="container main">
+      <div class="row">
+        <!-- 主功能区： 视频及评论 -->
+        <div class="col-9 main-left">
+          <!-- 视频播放区 -->
+          <div class="play-box card">
+            <div class="card-header">正在播放：小猪佩奇</div>
+            <div class="card-body">
+              <div class="embed-responsive embed-responsive-4by3">
+                <!-- <iframe
+                  src="https://player.bilibili.com/player.html?aid=56440271&cid=98892041&page=1"
+                  scrolling="no"
+                  border="0"
+                  frameborder="no"
+                  framespacing="0"
+                  allowfullscreen="true"
+                  class="embed-responsive-item"
+                >
+                </iframe> -->
+              </div>
+            </div>
+          </div>
+          <!-- 评论区 -->
+          <div class="comments card">
+            <div class="card-header">所有评论</div>
+            <ul class="list-unstyled card-body">
+              <li class="media my-4">
+                <img
+                  class="mr-3"
+                  src="img/角色-01.png"
+                  width="40px"
+                  height="40px"
+                  alt="Generic placeholder image"
+                />
+                <div class="media-body">
+                  <h6 class="mt-0 mb-1">List-based media object</h6>
+                  <span>时间</span>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                  scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
+                  nisi vulputate fringilla. Donec lacinia congue felis in
+                  faucibus.
+                </div>
+              </li>
+              <li class="media my-4">
+                <img
+                  class="mr-3"
+                  src="img/角色-01.png"
+                  width="40px"
+                  height="40px"
+                  alt="Generic placeholder image"
+                />
+                <div class="media-body">
+                  <h6 class="mt-0 mb-1">List-based media object</h6>
+                  <span>时间</span>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                  scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
+                  nisi vulputate fringilla. Donec lacinia congue felis in
+                  faucibus.
+                </div>
+              </li>
+              <li class="media my-4">
+                <img
+                  class="mr-3"
+                  src="img/角色-01.png"
+                  width="40px"
+                  height="40px"
+                  alt="Generic placeholder image"
+                />
+                <div class="media-body">
+                  <h6 class="mt-0 mb-1">List-based media object</h6>
+                  <span>时间</span>
+                  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+                  scelerisque ante sollicitudin. Cras purus odio, vestibulum in
+                  vulputate at, tempus viverra turpis. Fusce condimentum nunc ac
+                  nisi vulputate fringilla. Donec lacinia congue felis in
+                  faucibus.
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- 侧边栏：上传图片及展示结果 -->
+        <div class="sidebar col-3">
+          <div class="upload-box card">
+            <div class="card-header">点击按钮上传图片</div>
+            <div class="card-body">
+              <img
+                src="img/角色-01.png"
+                class="img-fluid img-thumbnail"
+                alt="upload image"
+                id="preview"
+              />
+              <form id="form-image">
+                <div class="form-group">
+                  <input
+                    type="file"
+                    class="form-control-file"
+                    id="exampleFormControlFile1"
+                    onchange="showPreview(this, 'preview')"
+                  />
+                </div>
+                <button type="summit" class="btn btn-primary btn-block">
+                  提交
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="display-box card">
+            <div class="card-header">分析结果</div>
+            <div class="card-body">
+              <p class="display-text">扫描到的图片可能是：</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item active">小猪佩奇 70%</li>
+                <li class="list-group-item">乔治 20%</li>
+                <li class="list-group-item">吹风机 5%</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      //使用FileReader和readAsDataURL实现预览所上传图片
+      function showPreview(source, imgId) {
+        let file = source.files[0];
+        if (window.FileReader) {
+          let fReader = new FileReader();
+          fReader.onloadend = function(e) {
+            document.getElementById(imgId).src = e.target.result;
+          };
+          fReader.readAsDataURL(file);
+        }
+      }
+    </script>
+    <script src="js/upload.js"></script>
+  </body>
+</html>
