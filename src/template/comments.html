@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>角色识别助手</title>
+    <link rel="icon" href="../img/角色-01.png" type="image/x-icon" />
+    <!-- Bootstrap4核心CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <!-- 自定义样式 -->
+    <link rel="stylesheet" href="../css/common.css" />
+    <link rel="stylesheet" href="../css/navbar.css" />
+    <link rel="stylesheet" href="../css/comments.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+  </head>
+
+  <body>
+    <!-- 导航栏 -->
+    <nav
+      class="navbar navbar-expand fixed-top navbar-light bg-light bd-navbar"
+      id="navbar"
+    >
+      <div class="container d-flex">
+        <div class="navbar-header" id="navbar-header">
+          <a class="navbar-brand">
+            <img
+              src="../img/角色-01.png"
+              width="30"
+              height="30"
+              class="d-inline-block align-top"
+              alt="Logo"
+            />
+            角色识别助手
+          </a>
+        </div>
+        <div class="navbar-nav-scroll">
+          <ul class="navbar-nav d-flex" id="nav-menu">
+            <li class="nav-item">
+              <a href="/src/template/index.html" class="nav-link">主页</a>
+            </li>
+            <li class="nav-item">
+              <a href="/src/template/intro.html" class="nav-link">介绍</a>
+            </li>
+            <li class="nav-item">
+              <a href="#" class="nav-link active">留言</a>
+            </li>
+          </ul>
+        </div>
+        <!-- ml-auto为bootstrap中向左推两个项目 -->
+        <div class="ml-auto d-flex">
+          <ul
+            class="nav navbar-nav user-bar align-items-center justify-content-end"
+            id="userbox"
+          ></ul>
+        </div>
+      </div>
+    </nav>
+    <!-- 主页面 -->
+    <div class="container main">
+      <div class="row">
+        <!-- 工具介绍  -->
+        <div class="col-12">
+          <div class="card comment-box">
+            <div class="card-body">
+              <form id="form-comments">
+                <div class="form-group">
+                  <label for="exampleFormControlTextarea1"
+                    >请在此输入评论</label
+                  >
+                  <!-- 文本框不允许输入空格 -->
+                  <textarea
+                    class="form-control"
+                    onkeyup="this.value=this.value.replace(/^\s+|\s+$/g,'')"
+                    id="exampleFormControlTextarea1"
+                    rows="3"
+                    name="comments"
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </form>
+            </div>
+          </div>
+          <div class="comments card">
+            <div class="card-header">所有评论</div>
+            <ul class="list-unstyled card-body" id="commentsList"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/comment.js"></script>
+    <script src="../js/displaynav.js"></script>
+  </body>
+</html>

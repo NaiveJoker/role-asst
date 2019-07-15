@@ -1,0 +1,14 @@
+.form-group label {
+  margin-left: 12px;
+}
+.login-brand {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+#login-title {
+  margin-bottom: 0;
+}
+.row {
+  min-height: 700px;
+}
