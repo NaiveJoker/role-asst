@@ -11,6 +11,9 @@
 .display-text {
   margin-top: 12px;
 }
-#preview {
+/* #preview {
   margin-bottom: 15px;
+} */
+#screenshot {
+  margin-top: 15px;
 }

@@ -71,9 +71,12 @@
             <div class="card-body">
               <div class="embed-responsive embed-responsive-16by9">
                 <video class="embed-responsive-item" controls>
-                  <source src="../video/kinonotabi.mp4" type="video/mp4" />
+                  <source src="../video/GameofThrone6.mp4" type="video/mp4" />
                 </video>
               </div>
+              <button class="btn btn-outline-primary btn-block" id="screenshot">
+                截屏
+              </button>
             </div>
           </div>
           <!-- 评论区 -->
@@ -92,6 +95,8 @@
                 class="img-fluid img-thumbnail"
                 alt="upload image"
                 id="preview"
+                width="auto"
+                height="auto"
               />
               <form id="form-image" method="POST">
                 <div class="form-group">
@@ -101,9 +106,10 @@
                     id="exampleFormControlFile1"
                     onchange="showPreview(this, 'preview')"
                     name="image"
+                    
                   />
                 </div>
-                <button type="summit" class="btn btn-primary btn-block">
+                <button type="summit" class="btn btn-outline-primary btn-block">
                   提交
                 </button>
               </form>
