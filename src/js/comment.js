@@ -2,6 +2,7 @@
 //页面预加载
 $(function() {
   //获取用户评论，若评论不为空则渲染
+  insertEmpty();
   $.get("http://localhost:5000/comments", function(data) {
     let comments = data.data;
     if (comments.length > 0) {
@@ -25,7 +26,7 @@ $(function() {
   function insertEmpty() {
     let commentLi = $("#commentsList");
     let emptyli = emptyTemp();
-    commentLi.append(empty);
+    commentLi.append(emptyli);
   }
 
   //所插入的评论模板

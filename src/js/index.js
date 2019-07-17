@@ -1,14 +1,22 @@
 $(document).ready(function() {
+  //修改标题中片源名称
+  let videoname = $("source")
+    .attr("src")
+    .replace("../video/", "");
+  $("#span-video-name").append(videoname);
   var dataUrl = null;
+  //提交图片
   $("form#form-image").submit(function(e) {
     e.preventDefault();
     var formData = new FormData(this);
     // canvas转码
-    // if (dataUrl) {
-    //   console.log(typeof dataUrl);
-    //   let newDataUrl = dataUrl.replace(/\+/g, "%2B");
-    //   formData.append("screenshot", newDataUrl);
-    // }
+    if (dataUrl) {
+      //将base64图片转为对象
+      var blob = dataURItoBlob(dataUrl);
+      console.log(typeof blob);
+      formData.append("screenshot", blob);
+      formData.append("filename", "role.png");
+    }
     $.ajax({
       url: "http://localhost:5000/upload",
       type: "POST",
@@ -23,25 +31,26 @@ $(document).ready(function() {
         );
       },
       success: function(data) {
+        //成功渲染结果
         if (data.error_code) {
           alert(`${data.error_code}: ${data.error_msg}!`);
           emptyLi();
-          $("#result-list").append(
-            `<li class="list-group-item">
-            <p>error_code: ${data.error_code}</p>
-            <p>error_msg: ${data.error_msg}!</p>
-</p>          </li>`
-          );
+          let error_code = `error_code: ${data.error_code}`;
+          let error_msg = `error_msg: ${data.error_msg}!`;
+          insertResult(error_code, error_msg);
         } else {
           let result = data.result.face_list;
           console.log(result);
-          console.log(data.result);
           emptyLi();
           for (let i = 0; i < result.length; i++) {
-            insertResult(
-              result[i].user_list[0].user_id,
-              result[i].user_list[0].score
-            );
+            let userId = result[i].user_list;
+            if (userId.length) {
+              let user_id = `姓名： ${userId[0].user_id}`;
+              let score = `可信度： ${userId[0].score}`;
+              insertResult(user_id, score);
+            } else {
+              insertResult("角色未入库", "暂无评分");
+            }
           }
         }
       },
@@ -50,6 +59,7 @@ $(document).ready(function() {
       processData: false
     });
   });
+  //点击截图后用canvas截图
   $("#screenshot").click(function() {
     let canvas = $("<canvas>")[0];
     let canvasCtx = canvas.getContext("2d");
@@ -74,17 +84,20 @@ $(document).ready(function() {
       imgWidth,
       imgHeight
     );
-    dataUrl = canvas.toDataURL("image/png");
+    dataUrl = canvas.toDataURL("image/jpg");
     img.src = dataUrl;
   });
-  function insertResult(key, score) {
+  function insertResult(info1, info2) {
     let resultList = $("#result-list");
-    let li = templateLi(key, score);
+    let li = templateLi(info1, info2);
     resultList.append(li);
   }
-  function templateLi(key, score) {
+  function templateLi(info1, info2) {
     let li = `
-    <li class="list-group-item"><p>姓名：${key}</p><p>可信度：${score}</p></li>
+    <li class="list-group-item result-li">
+      <p class="result-p">${info1}</p>
+      <p class="result-p">${info2}</p>
+    </li>
     `;
     return li;
   }
@@ -95,5 +108,20 @@ $(document).ready(function() {
   function activeLi() {
     let li = $("#result-list li:first");
     return li.addClass("active");
+  }
+  function dataURItoBlob(base64Data) {
+    var byteString;
+    if (base64Data.split(",")[0].indexOf("base64") >= 0)
+      byteString = atob(base64Data.split(",")[1]);
+    else byteString = unescape(base64Data.split(",")[1]);
+    var mimeString = base64Data
+      .split(",")[0]
+      .split(":")[1]
+      .split(";")[0];
+    var ia = new Uint8Array(byteString.length);
+    for (var i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+    }
+    return new Blob([ia], { type: mimeString });
   }
 });
