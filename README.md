@@ -15,6 +15,14 @@
 - [x] 图象识别结果展示--将后台识别结果返回到前端渲染成列表，最可信结果高亮
 - [x] 点击按钮截屏并预览截图
 
+## 项目展示
+![首页](https://github.com/NaiveJoker/role-asst/blob/master/display/index.png?raw=true)
+首页：主功能区
+![介绍页](https://github.com/NaiveJoker/role-asst/blob/master/display/intro.png?raw=true)
+介绍页：介绍软件功能和使用方式
+![评论页](https://github.com/NaiveJoker/role-asst/blob/master/display/comments.png?raw=true)
+评论页：用于用户评论
+
 ## 使用方法 / Build
 1. 在控制台中输入命令`npm install`安装所需要内容
 ```
@@ -38,7 +46,10 @@ http-server
 3. 修改前端项目目录结构，使之结构更清晰;
 4. 将绝对路径修改为相对路径(还存在一点问题)
 
+### 第三次更新
+1. 优化细节（登录相关提示）
+2. 修改配色方案（添加渐变色）
+
 ### 下次预计更新内容
 1. 完善页面细节
-2. 修改页面整体使用方案
-3. 解决base64格式上传问题
+2. 修改结果展示形式
