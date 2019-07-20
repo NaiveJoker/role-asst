@@ -16,6 +16,8 @@ $(document).ready(function() {
       console.log(typeof blob);
       formData.append("screenshot", blob);
       formData.append("filename", "role.png");
+    } else {
+      alert("无图片，图片上传失败！");
     }
     $.ajax({
       url: "http://localhost:5000/upload",

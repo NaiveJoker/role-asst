@@ -7,10 +7,12 @@
   border-bottom: 3px solid #f8f9fa;
 }
 .navbar-nav .nav-item .nav-link.active {
-  color: #2c6eb7;
-  border-bottom-color: #2c6eb7;
+  color: #2182c7;
+  border-bottom-color: #2182c7;
+  border-image: linear-gradient(to right, #2182c7 30%, #27c168 100%);
+  border-image-slice: 10;
 }
 .navbar-nav .nav-item .nav-link:hover {
-  color: #2c6eb7;
-  border-bottom-color: #2c6eb7;
+  color: #2182c7;
+  border-bottom-color: #2182c7;
 }

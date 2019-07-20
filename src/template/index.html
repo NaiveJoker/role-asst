@@ -144,19 +144,6 @@
       integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
       crossorigin="anonymous"
     ></script>
-    <script>
-      //使用FileReader和readAsDataURL实现预览所上传图片
-      function showPreview(source, imgId) {
-        let file = source.files[0];
-        if (window.FileReader) {
-          let fReader = new FileReader();
-          fReader.onloadend = function(e) {
-            document.getElementById(imgId).src = e.target.result;
-          };
-          fReader.readAsDataURL(file);
-        }
-      }
-    </script>
     <script src="../js/index.js"></script>
     <script src="../js/comment.js"></script>
     <script src="../js/displaynav.js"></script>

@@ -4,3 +4,29 @@ body {
 .main {
   margin-top: 80px;
 }
+.card-header {
+  background-color: #2182c7;
+  background-image: linear-gradient(to right, #2182c7 50%, #27c168 100%);
+  color: #ffffff;
+}
+.btn-outline-primary {
+  color: #2182c7;
+  border-color: #2182c7;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #2182c7;
+  border-color: #2182c7;
+}
+.btn-primary:hover {
+  color: #ffffff;
+  background-image: linear-gradient(to right, #2182c7 50%, #27c168 100%);
+  border-image: linear-gradient(to right, #2182c7 0%, #27c168 100%);
+  border-image-slice: 10;
+}
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #2182c7;
+  border-color: #2182c7;
+}
